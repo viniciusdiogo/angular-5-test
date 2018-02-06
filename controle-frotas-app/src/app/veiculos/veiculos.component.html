@@ -1,0 +1,20 @@
+<div id="toolbar">
+  <div class="form-inline" role="form">
+    <div class="form-group left">
+      <button type="button" class="btn btn-success" routerLink="/veiculos/novo">Novo Carro</button>
+      <button type="button" class="btn btn-danger" (click)="removeCar()">Excluir Carro</button>
+    </div>
+    <div class="input-group fr">
+      <input type="text" class="form-control" name="search" placeholder="Pesquisar" aria-describedby="sizing-addon1">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </span>
+    </div>
+
+
+  </div>
+</div>
+
+<table class="table table-no-bordered" id="listVeiculos"> </table>

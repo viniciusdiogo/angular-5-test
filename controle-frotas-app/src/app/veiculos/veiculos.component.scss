@@ -1,0 +1,144 @@
+$bg-color: #d3e6fa;
+$body-color: #5b768f;
+$border-color: #80c1f5;
+
+.container {
+  background-color: #eff2f8;
+  padding: 0 45px;
+  .fixed-table-toolbar {
+    .bs-bars {
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-top: 20px;
+    }
+    .left {
+      .btn {
+        font-size: 12px;
+        padding: 10px 35px;
+      }
+    }
+    .btn-success {
+      margin-right: 10px;
+      background-color: #41b14e;
+      border-color: #41b14e;
+    }
+    .btn-danger {
+      margin-right: 10px;
+      background-color: #ab3f3f;
+      border-color: #ab3f3f;
+      margin-left: 15px;
+    }
+  }
+
+  .fixed-table-container {
+    color: $body-color;
+    border: none;
+
+    .fixed-table-body {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom: none;
+    }
+
+    .table-hover {
+      thead {
+        color: #325170;
+        background-color: #f7f9fc;
+      }
+      tbody {
+        tr {
+          &:hover {
+            background-color: $bg-color;
+            border-left: 1px $border-color solid;
+            border-right: 1px $border-color solid;
+            cursor: pointer;
+
+            td {
+              border-top: 1px $border-color solid;
+              border-bottom: 1px $border-color solid;
+            }
+          }
+
+          td {
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            &.col-valor {
+              padding-right: 35px;
+            }
+          }
+
+          th {
+            &.col-valor {
+              padding-right: 35px;
+            }
+          }
+        }
+      }
+
+      thead {
+        tr {
+          th {
+            &.col-valor {
+              .th-inner {
+                padding-right: 35px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .fixed-table-pagination {
+      padding: 0 15px;
+      margin-top: 20px;
+
+      .pagination-detail {
+        display: none;
+      }
+
+      .pagination {
+        &.pull-right {
+          text-align: center;
+        }
+
+        .pagination {
+          li {
+            &.active {
+              a {
+                background-color: $bg-color;
+                border-color: $border-color;
+                color: $body-color;
+              }
+            }
+            &.page-pre {
+              a {
+                color: transparent;
+                &:after {
+                  content: "<<";
+                  color: $body-color;
+                }
+              }
+            }
+            &.page-next {
+              a {
+                color: transparent;
+                &:after {
+                  content: ">>";
+                  color: $body-color;
+                }
+              }
+            }
+
+            a {
+              padding: 8px 14px;
+              &:hover {
+                background-color: #fff9e8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

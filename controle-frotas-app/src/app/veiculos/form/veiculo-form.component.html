@@ -1,0 +1,62 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <h3>{{title}}</h3>
+
+  <div class="form-group">
+    <label for="frm-placa">Placa</label>
+    <input type="text" class="form-control ucase" name="placa" id="frm-placa" maxlength="8" placeholder="Placa" dropSpecialCharacters="false"
+      mask="SSS-0000" formControlName="placa">
+  </div>
+
+  <div class="form-group">
+    <label for="frm-foto">Foto</label>
+    <input type="text" class="form-control" name="foto" id="frm-foto" placeholder="Foto" formControlName="foto">
+  </div>
+
+  <div class="form-group">
+    <label for="frm-valor">Valor</label>
+    <input type="number" class="form-control" name="valor" id="frm-valor" placeholder="Valor" formControlName="valor">
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+      <div class="form-group">
+        <label for="frm-marca">Marca</label>
+        <select class="form-control" name="marca" id="frm-marca" (change)="onChangeMarca($event.target.value)" formControlName="marca">
+          <option>Selecione um Opção</option>
+          <option *ngFor="let marca of marcas" value={{marca.id_marca}}>
+            {{marca.nome}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <div class="form-group">
+        <label for="frm-modelo">Modelo</label>
+        <select class="form-control" name="modelo" id="frm-modelo" formControlName="modelo">
+          <option>Selecione um Opção</option>
+          <option *ngFor="let modelo of modelos" value={{modelo.id_modelo}}>
+            {{modelo.nome}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <div class="form-group">
+        <label for="frm-combustivel">Combustivel</label>
+        <select class="form-control" name="combustivel" id="frm-combustivel" formControlName="combustivel">
+          <option>Selecione um Opção</option>
+          <option value="gasolina">Gasolina</option>
+          <option value="alcool">Álcool</option>
+          <option value="flex">Flex</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Salvar</button>
+    <button type="button" class="btn btn-danger" routerLink="/veiculos">Cancelar</button>
+  </div>
+
+</form>
